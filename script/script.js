@@ -5,6 +5,7 @@
     Requirements
     1 - Get birtday of the user
     2 - Get week user was born in the year
+    3 - Get Gender of the User and use the Akram naming based on user gender.
 */
 // calculate age from the inserted Date Month and Year by User
 // Getting var from user input and creating Var for script
@@ -106,7 +107,7 @@ btn.addEventListener("click", (days, month, year) => {
     }
     var ageMonths = m - month;
     var ageDays = (maxDays - d) + parseInt(days);
-
+    
 
     // console.log(typeof days); // string why????
 
