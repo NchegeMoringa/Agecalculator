@@ -29,3 +29,6 @@ button{
     color: white;
 
 }
+.form{
+    flex-direction: column;
+}
