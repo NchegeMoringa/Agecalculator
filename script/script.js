@@ -12,6 +12,8 @@
 var daysInput = document.getElementById("date");
 var monthInput = document.getElementById("month");
 var yearInput = document.getElementById("year");
+//adding weekinput
+var weekinput = document.getElementById("week").value;
 
 // week days array
 var week = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -23,7 +25,10 @@ var akramFemale = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
 var yourGender = document.getElementById("gender");
 // var to use to display AGE
 var showAge = document.getElementById("displayAge");
-
+//var to display akram name
+var weekName = document.getElementById("displayAkram")
+//var to display akram week
+var akramWeek = document.getElementById("displayWeek");
 var btn = document.getElementById('buttonCalc');
 
 // button varialbe.
@@ -36,6 +41,8 @@ btn.addEventListener("click", (days, month, year) => {
     days = daysInput.value;
     month = monthInput.value;
     year = yearInput.value;
+    //adding gender input
+    gender = yourGender.value;
 
 
     if (daysInput.value == "" || monthInput.value == "" || yearInput.value == "") {
@@ -61,7 +68,7 @@ btn.addEventListener("click", (days, month, year) => {
 
         console.log(newtoday);
 
-    if (m == 1) { // january
+    if (m == 1 ) { // january
         maxDays = 31;
         monthNum = 1;
     }
@@ -106,17 +113,15 @@ btn.addEventListener("click", (days, month, year) => {
         monthNum = 11;
     }
 
+    //gender akram logic
   
-
     else { // december
         maxDays = 31;
         monthNum = 12;
     }
-
-
-
-
-
+  
+   
+function akramNames(gender, weekinput) {
     var ageYears = y - year;
 
     if (m <= month) {
@@ -125,10 +130,76 @@ btn.addEventListener("click", (days, month, year) => {
     var ageMonths = m - month;
     var ageDays = (maxDays - d) + parseInt(days);
 
-    
-
-    
-
     console.log(`Your age is ${ageYears} y , ${ageMonths} m and ${ageDays} d`);
     showAge.innerHTML = `Your age is ${ageYears} y , ${ageMonths} m and ${ageDays} d`;
+     // Female Akram
+    if (gender == 'female' && weekinput == 'sunday') {
+
+        displayAkram.innerHTML = "Akram name: Akosua";
+
+    }
+    else if (gender == 'female' && weekinput == 'monday') {
+        displayAkram.innerHTML = "Akram name: Adwoa";
+
+    }
+    else if (gender == 'female' && weekinput == 'tuesday') {
+        displayAkram.innerHTML = "Akram name: Abenaa";
+
+    }
+    else if (gender == 'female' && weekinput == 'wednesday') {
+        displayAkram.innerHTML = "Akram name: Akua";
+
+    }
+    else if (gender == 'female' && weekinput == 'thursday') {
+        displayAkram.innerHTML = "Akram name: Yaa";
+
+    }
+    else if (gender == 'female' && weekinput == 'friday') {
+        displayAkram.innerHTML = "Akram name: Afua";
+
+    }
+    else if (gender == 'female' && weekinput == 'monday') {
+        displayAkram.innerHTML = "Akram name: Ama";
+
+    }
+    // Akram name for Male gender
+    else if (gender == 'male' && weekinput == 'sunday') {
+        displayAkram.innerHTML = "Akram name: Kwasi";
+
+    }
+    else if (gender == 'male' && weekinput == 'monday') {
+        displayAkram.innerHTML = "Akram name: Kwadwo";
+
+    }
+    else if (gender == 'male' && weekinput == 'tuesday') {
+        displayAkram.innerHTML = "Akram name: Kwabena";
+
+    }
+    else if (gender == 'male' && weekinput == 'wednesday') {
+        displayAkram.innerHTML = "Akram name: Kwaku";
+
+    }
+    else if (gender == 'male' && weekinput == 'friday') {
+        displayAkram.innerHTML = "Akram name: Kofi";
+
+    }
+    else if (gender == 'male' && weekinput == 'saturday') {
+        displayAkram.innerHTML = "Akram name: Kwame";
+
+    }
+    // else for male and thursday only
+    else    {
+        displayAkram.innerHTML = "Akram name: Yaw";
+
+    }
+
+}
+
+    
+
+    
+
+    akramNames(gender,weekinput);
+
+    // Working on the Akama gender names
 })
