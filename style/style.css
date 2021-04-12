@@ -29,6 +29,7 @@ section {
     background-color: whitesmoke;
     border-radius: 8px;
     margin-bottom: 20px;
+    border: black 2px solid;
 }
 .form-group {
     width: 100%;
