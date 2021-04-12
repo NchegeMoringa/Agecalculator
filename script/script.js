@@ -9,40 +9,57 @@
 */
 // calculate age from the inserted Date Month and Year by User
 // Getting var from user input and creating Var for script
-let daysH = document.getElementById("date");
-let monthH = document.getElementById("month");
-let yearH = document.getElementById("year");
+var daysInput = document.getElementById("date");
+var monthInput = document.getElementById("month");
+var yearInput = document.getElementById("year");
 
+// week days array
+var week = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+//AKRAM names array
+var akramMale = ['Kwasi', 'Kwadwo', 'Kwabena', 'Kwaku', 'Yaw', 'Kofi', 'Kwame'];
+var akramFemale = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
+
+//Var Gender get element
+var yourGender = document.getElementById("gender");
 // var to use to display AGE
-let showAge = document.getElementById("show-age");
+var showAge = document.getElementById("displayAge");
+
+var btn = document.getElementById('buttonCalc');
+
+// button varialbe.
 
 
-// Const variable for the ID btn
-
-const btn = document.getElementById("calc-btn");
-// var for current date as per w3 student learning directive link https://www.w3schools.com/js/js_dates.asp
-var today = new Date();
-
-let d = today.getDate();
-var m = today.getMonth() + 1;
-var y = today.getFullYear();
-let maxDays = 0;
-let monthNum = 1;
 
 // eventlistener if input is blank to display meso for user to alert the user.
 btn.addEventListener("click", (days, month, year) => {
 
-    days = daysH.value;
-    month = monthH.value;
-    year = yearH.value;
+    days = daysInput.value;
+    month = monthInput.value;
+    year = yearInput.value;
 
-    if (daysH.value == "" || monthH.value == "" || yearH.value == "") {
+
+    if (daysInput.value == "" || monthInput.value == "" || yearInput.value == "") {
         return alert("Please enter your date of birth properly to calculate your age")
     }
 
-    // no else condition needed after this IF
+    // var for current date as per w3 student learning directive link https://www.w3schools.com/js/js_dates.asp
+    var today = new Date();
+    //converting  laptop machine to readable date.
+    var newtoday = today.toDateString();
 
-    console.log(`Current Date : ${d} ${m} ${y}`);
+
+
+    var d = today.getDate();
+    var m = today.getMonth() + 1;
+    var y = today.getFullYear();
+
+    var maxDays = 0;
+    var monthNum = 1;
+
+    
+  
+
+        console.log(newtoday);
 
     if (m == 1) { // january
         maxDays = 31;
@@ -89,7 +106,7 @@ btn.addEventListener("click", (days, month, year) => {
         monthNum = 11;
     }
 
-    // make december else or else if it's your choice
+  
 
     else { // december
         maxDays = 31;
@@ -107,9 +124,10 @@ btn.addEventListener("click", (days, month, year) => {
     }
     var ageMonths = m - month;
     var ageDays = (maxDays - d) + parseInt(days);
+
     
 
-    // console.log(typeof days); // string why????
+    
 
     console.log(`Your age is ${ageYears} y , ${ageMonths} m and ${ageDays} d`);
     showAge.innerHTML = `Your age is ${ageYears} y , ${ageMonths} m and ${ageDays} d`;
