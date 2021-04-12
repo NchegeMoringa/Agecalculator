@@ -136,7 +136,7 @@ function akramNames(gender, weekinput) {
     console.log(`Your age is ${ageYears} y , ${ageMonths} m and ${ageDays} d`);
     showAge.innerHTML = `Your age is ${ageYears} y , ${ageMonths} m and ${ageDays} d`;
 
-    function AkramGender(gender,weekinput){
+    
      // Female Akram
     if (gender == 'female' && weekinput == 'sunday') {
 
@@ -198,7 +198,7 @@ function akramNames(gender, weekinput) {
         displayAkram.innerHTML = "Akram name: Yaw";
 
     }
-    }
+    
 
 }
 
