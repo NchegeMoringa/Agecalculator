@@ -44,7 +44,8 @@ btn.addEventListener("click", (days, month, year) => {
     //adding gender input
     gender = yourGender.value;
 
-
+// Event listener for button, functions are withing the event listener.
+// using the OR logical expression ||
     if (daysInput.value == "" || monthInput.value == "" || yearInput.value == "") {
         return alert("Please enter your date of birth properly to calculate your age")
     }
@@ -120,7 +121,7 @@ btn.addEventListener("click", (days, month, year) => {
         monthNum = 12;
     }
   
-   
+   // Function containing the gender input.
 function akramNames(gender, weekinput) {
     var ageYears = y - year;
 
@@ -129,9 +130,13 @@ function akramNames(gender, weekinput) {
     }
     var ageMonths = m - month;
     var ageDays = (maxDays - d) + parseInt(days);
+    // CALCULATE WEEK BOR from the AgedaysMonts.
+    
 
     console.log(`Your age is ${ageYears} y , ${ageMonths} m and ${ageDays} d`);
     showAge.innerHTML = `Your age is ${ageYears} y , ${ageMonths} m and ${ageDays} d`;
+
+    function AkramGender(gender,weekinput){
      // Female Akram
     if (gender == 'female' && weekinput == 'sunday') {
 
@@ -162,6 +167,7 @@ function akramNames(gender, weekinput) {
         displayAkram.innerHTML = "Akram name: Ama";
 
     }
+
     // Akram name for Male gender
     else if (gender == 'male' && weekinput == 'sunday') {
         displayAkram.innerHTML = "Akram name: Kwasi";
@@ -191,6 +197,7 @@ function akramNames(gender, weekinput) {
     else    {
         displayAkram.innerHTML = "Akram name: Yaw";
 
+    }
     }
 
 }
