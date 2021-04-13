@@ -29,11 +29,11 @@ var showAge = document.getElementById("displayAge");
 var weekName = document.getElementById("displayAkram")
 //var to display akram week
 var akramWeek = document.getElementById("displayWeek");
-var btn = document.getElementById('buttonCalc');
+
 
 // button varialbe.
 
-
+var btn = document.getElementById('buttonCalc');
 //Form 
 const akramForm = document.forms['akramForm']
 
