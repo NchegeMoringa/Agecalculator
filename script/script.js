@@ -34,6 +34,9 @@ var btn = document.getElementById('buttonCalc');
 // button varialbe.
 
 
+//Form 
+const akramForm = document.forms['akramForm']
+
 
 // eventlistener if input is blank to display meso for user to alert the user.
 btn.addEventListener("click", (days, month, year) => {
