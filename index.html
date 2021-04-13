@@ -10,128 +10,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/bootstrap.css" >
-    <link rel="stylesheet" href="style/style.css" >
+    <link rel="stylesheet" href="style/bootstrap.css">
+    <link rel="stylesheet" href="style/style.css">
     <title>nariksochege Age Calculator</title>
 </head>
 
-<body> 
+<body>
     <div class="row">
         <h1 class="card-header">Age Calculator and Akram names</h1>
-            <div class="col-md-5 col-sm-6">
+        <div class="col-md-5 col-sm-6">
 
-                
-                    <h2>About</h2>
-                    <p>This is a web application that takes a user's birthday and calculates the day of the week
-                    they were born and then depending on their gender outputs their Akan Name
-                    </p>
-                    <p>Below are the Akram Ghanian names</p>
-                <table class="table">
-                    <!--Table with Akram names-->
-                    <tr>
-                        <th>Week</th>
-                        <th>Female</th>
-                        <th>Male</th> 
-                                              
-                        
-                    </tr>
-                    <tr>
-                        <td>Sunday</td>
-                        <td>Akosua</td>
-                        <td>Kwasi</td>
-                    </tr>
-                        <tr>
-                            <td>Monday</td>
-                            <td>Adwoa</td>
-                            <td>Kwadwo</td>
-                    </tr>
-                    <tr>
-                        <td>Tuesday</td>
-                        <td>Abenaa</td>
-                        <td>Kwabena</td>
-                    </tr>
-                    <tr>
-                        <td>Wednesday</td>
-                        <td>Akua</td>
-                        <td>Kwaku</td>
-                    </tr>
-                    <tr>
-                        <td>Thursday</td>
-                        <td>Yaa</td>
-                        <td>Yaw</td>
-                    </tr>
-                    <tr>
-                        <td>Friday</td>
-                        <td>Afua</td>
-                        <td>Kofi</td>
-                    </tr>
-                    <tr>
-                        <td>Saturday</td>
-                        <td>Ama</td>
-                        <td>Kwame</td>
-                    </tr>
-                </table>
+
+            <h2>About</h2>
+            <p>This is a web application that takes a user's birthday and calculates the day of the week
+                they were born and then depending on their gender outputs their Akan Name
+            </p>
+            <p>Below are the Akram Ghanian names</p>
+            <table class="table">
+                <!--Table with Akram names-->
+                <tr>
+                    <th>Week</th>
+                    <th>Female</th>
+                    <th>Male</th>
+
+
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>Akosua</td>
+                    <td>Kwasi</td>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>Adwoa</td>
+                    <td>Kwadwo</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>Abenaa</td>
+                    <td>Kwabena</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>Akua</td>
+                    <td>Kwaku</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>Yaa</td>
+                    <td>Yaw</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>Afua</td>
+                    <td>Kofi</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>Ama</td>
+                    <td>Kwame</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <h3>Enter Below Details</h3>
+            <div class="form">
+                <form class="akramForm">
+                    <div class="chei-form">
+                        <div class="form-group">
+                            <label for="input">Enter your birth Date </label>
+                            <input type="number" id="date" placeholder="date" min=1 max=31 maxlength=2>
+                        </div>
+                        <div class="form-group">
+                            <label for="input">Enter your birth Month </label>
+                            <input type="number" id="month" placeholder="month" min=1 max=12 maxlength=2>
+                        </div>
+                        <div class="form-group">
+                            <label for="input">Enter your birth Year </label>
+
+                            <input type="number" id="year" placeholder="year" min=1800 max=2020 maxlenght=4 minlength=4>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="input">On which Day were you Born </label>
+                            <select name="week" id="week">
+                                <option value="sunday">sunday</option>
+                                <option value="monday">monday</option>
+                                <option value="tuesday">tuesday</option>
+                                <option value="wednesday">wednesday</option>
+                                <option value="thursday">thursday</option>
+                                <option value="friday">friday</option>
+                                <option value="saturday">saturday</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <!-- Checkbox to select gender-->
+                            <label for="input">Select your Gender </label>
+                            <select name="gender" id="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+
+                            </select>
+                        </div>
+                        <button id="buttonCalc" class="button" type="submit">Calculate Age</button>
+                    </div>
+                </form>
             </div>
 
-            <div class="col-md-4 col-sm-6">
-                    <h3>Enter Below Details</h3>
-                        <div class="form">
-                            <form class="akramForm">
-                                    <div class= "chei-form">
-                                            <div class="form-group">
-                                                <label for="input">Enter your birth Date </label>
-                                                    <input type="number" id="date" placeholder="date" min=1 max=31 maxlength=2>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="input">Enter your birth Month </label>
-                                                    <input type="number" id="month" placeholder="month" min=1 max=12 maxlength=2>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="input">Enter your birth Year </label>
-                                            
-                                                    <input type="number" id="year" placeholder="year"min=1800 max=2020 maxlenght=4 minlength=4>
-                                            </div>
-                                            <div class="form-group">
-                                            
-                                                <label for="input">On which Day were you Born </label>
-                                                <select name="week" id="week">
-                                                    <option value="sunday">sunday</option>
-                                                    <option value="monday">monday</option>
-                                                    <option value="tuesday">tuesday</option>
-                                                    <option value="wednesday">wednesday</option>
-                                                    <option value="thursday">thursday</option>
-                                                    <option value="friday">friday</option>
-                                                    <option value="saturday">saturday</option>
-                                                
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                        <!-- Checkbox to select gender-->
-                                                        <label for="input">Select your Gender </label>
-                                                        <select name="gender" id="gender">
-                                                            <option value="male">Male</option>
-                                                            <option value="female">Female</option>
-                                                        
-                                                        </select>
-                                            </div>
-                                            <button id="buttonCalc" class="button" type="submit">Calculate Age</button>
-                                    </div>
-                            </form>
-                </div>
 
-            
-            </div>
-                            <div class="col-md-3 col-sm-6" > 
-                                        <!--Javascript paragraph to push the documentWrite function to the html page-->
-                                        <p><b>The results will display here</b></p>
-                                        <p id="displayAge"></p>
-                                        <p id= "displayAkram"></p>
-                                        <p id = "displayWeek" ></p>
-                            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <!--Javascript paragraph to push the documentWrite function to the html page-->
+            <p><b>The results will display here</b></p>
+            <p id="displayAge"></p>
+            <p id="displayAkram"></p>
+            <p id="displayWeek"></p>
+        </div>
     </div>
 
     <!--Javascript running the above code below page to improve under body tag to allow page to finish loading-->
     <script src="script/script.js"></script>
+    <div class="card-footer">
+        <p>Age Calculator</p>
+    </div>
 </body>
 
 </html>
