@@ -201,6 +201,44 @@ function akramNames(gender, weekinput) {
         displayAkram.innerHTML = "Akram name: Yaw";
 
     }
+
+    /*
+/Day of the week (d) = ( ( (CC/4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD ) mod 7
+where;
+CC - is the century digits.For example 1989 has CC = 19
+YY - is the Year digits(1989 has YY = 89)
+MM - is the Month
+DD - is the Day of the month
+mod - is the modulus function ( % )
+}
+*/
+    var years = year.toString();
+    // get length
+    console.log(years.length)
+    // to get the individual first and last digits of the year
+    var yu1 = years.charAt(years.length - 4);
+    var yu2 = years.charAt(years.length - 3);
+    var yu3 = years.charAt(years.length - 2);
+    var yu4 = years.charAt(years.length - 1);
+    var yearslength = yu1.concat(yu2)
+    var yearslength2 = yu3.concat(yu4);
+    // convert to INT
+    var cc = parseInt(yearslength);
+    var yy = parseInt(yearslength2);
+
+    var dd = parseInt(ageDays);
+    var mm = parseInt(ageMonths);
+    console.log(yu1);
+    console.log(yu2);
+    console.log(yu3);
+    console.log(yu4);
+
+    // formula and variable to get the day of week
+    var DayOfWeek = (((cc / 4) - 2 * cc - 1) + ((5 * yy / 4)) + ((26 * (mm + 1) / 10)) + dd) % 7;
+    var weekNumber = Math.round(DayOfWeek);
+    console.log(DayOfWeek);
+
+    document.getElementById("displayWeek").innerHTML = weekNumber;
     
 
 }
